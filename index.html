@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CHATBOT</title>
+    <style>
+        #chatLog{text-align: center;
+        }
+        h2 {text-align: center;}
+        body{
+           height: 100%;
+        }
+        #bg{
+            background-image: url("pexels-photo-531880.jpeg");
+            height: 100%;
+            background-position: center;
+            background-repeat: repeat-y;
+            background-size: cover;
+            
+        }
+    </style>
+    <script>
+        var know = {
+            "comedy":"you can watch Shazam or Jojo Rabbit",
+            "Comedy":"you can watch Shazam or Jojo Rabbit",
+            "Action":"you can watch avengers or 300:rise of an empire",
+            "action":"you can watch avengers or 300:rise of an empire",
+           "animation": "you can watch The Lion King or Incredibles 2",
+           
+            
+           
+            
+            // You Can Add More Stuff Here - It is customizable. - you can add more than 3
+         };
+        
+
+        function talk() {
+             var user =document.getElementById("userBox") .value;
+             document.getElementById("chatLog").innerHTML +=user+"<br>";
+            if(user in know){
+                document.getElementById("chatLog").innerHTML += know[user]+"<br>";
+            } else{
+                document.getElementById("chatLog").innerHTML+="I am not a genius , ask me something that I know!<br>";}}
+    </script>
+</head>
+<body id=bg >
+<h1 id="chatLog" >-- Movie Suggestion CHATBOT--<br></h1>
+<h1 id="chatLog">Hello Welcome to movie suggestion chatbot<br>
+Please type which type of movie do you like to watch comedy or action or animation</h1>
+<div style="text-align: center;"><input id="userBox" type="text" onkeydown="if(event.keyCode == 13){talk()}"></div>
+
+</body>
+</html>
